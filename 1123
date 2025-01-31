@@ -1,0 +1,14 @@
+// When "Yes" button is clicked
+document.getElementById("yesBtn").addEventListener("click", function() {
+    document.getElementById("popup").classList.remove("hidden");
+});
+
+// No button moves when hovered
+document.getElementById("noBtn").addEventListener("mouseover", function() {
+    let x = Math.random() * (window.innerWidth - this.offsetWidth);
+    let y = Math.random() * (window.innerHeight - this.offsetHeight);
+    this.style.position = 'absolute';
+    this.style.left = x + "px";
+    this.style.top = y + "px";
+    this.style.transition = 'left 0.2s, top 0.2s';
+});

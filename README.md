@@ -33,7 +33,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    flex-direction: column;
+    margin: 0;
 }
 
 .container {
@@ -58,6 +58,7 @@ button {
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 #yesBtn {
@@ -65,10 +66,18 @@ button {
     color: white;
 }
 
+#yesBtn:hover {
+    background-color: #ff1a3c;
+}
+
 #noBtn {
     background-color: black;
     color: white;
-    position: absolute;
+    position: relative;
+}
+
+#noBtn:hover {
+    background-color: #333;
 }
 
 .hidden {
@@ -88,14 +97,14 @@ img {
     width: 100px;
     margin-top: 10px;
 }
-
 document.getElementById("yesBtn").addEventListener("click", function() {
     document.getElementById("popup").classList.remove("hidden");
 });
 
 document.getElementById("noBtn").addEventListener("mouseover", function() {
-    let x = Math.random() * window.innerWidth;
-    let y = Math.random() * window.innerHeight;
+    let x = Math.random() * (window.innerWidth - this.offsetWidth);
+    let y = Math.random() * (window.innerHeight - this.offsetHeight);
+    this.style.position = 'absolute';
     this.style.left = x + "px";
     this.style.top = y + "px";
 });

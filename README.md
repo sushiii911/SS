@@ -24,7 +24,6 @@
     <script src="script.js"></script>
 </body>
 </html>
-
 body {
     text-align: center;
     font-family: Arial, sans-serif;
